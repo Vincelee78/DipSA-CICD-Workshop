@@ -17,15 +17,9 @@ jobs:
      - name: Run snapshot action
         uses: actions/go-dependency-submission@v1
         with:
-            # Required: Define the repo path to the go.mod file used by the
-            # build target
-            go-mod-path: go-example/go.mod
-            #
-            # Optional: Define the path of a build target (a file with a
-            # `main()` function) If not defined, this Action will collect all
-            # dependencies used by all build targets for the module, which may
-            # include Go dependencies used by tests and tooling.
-            go-build-target: go-example/cmd/octocat.go
+          go-mod-path: go.mod  
+          go-build-target: all
+
      - name: checkout source
        uses: actions/checkout@v3
 
