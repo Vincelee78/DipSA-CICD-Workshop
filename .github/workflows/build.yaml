@@ -8,21 +8,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
-    - name : setup dotnet sdk
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 6.0.x
+     - uses: actions/checkout@v3
+     - uses: actions/setup-go@v4
+       with:
+        go-version: '1.16.0-beta.1' # The Go version to download (if necessary) and use.
+     - run: go version
 
-    - name: checkout source
-      uses: actions/checkout@v3
+     - name: checkout source
+       uses: actions/checkout@v3
 
-    - name: Deploy to Railway
-      run: railway deploy
+     - name: Deploy to Railway
+       uses: bervProject/railway-deploy@main
+       with:
+        railway_token: ${{ secrets.RAILWAY_TOKEN }}
+        service: "my-service"
 
-    - name: Publish Deployment URL on Slack
-      run: |
-          # Add your Slack notification logic here
+     - name: Publish Deployment URL on Slack
+      - run: 
+          
 
         
         
