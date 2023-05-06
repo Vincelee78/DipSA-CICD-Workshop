@@ -14,7 +14,7 @@ jobs:
         go-version: '1.16.0-beta.1' # The Go version to download (if necessary) and use.
      - run: go version
 
-     - name: Run snapshot action
+     - name: Run snapshot
        uses: actions/go-dependency-submission@v1
        with:
         go-mod-path: ./go.mod
