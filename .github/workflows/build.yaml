@@ -29,54 +29,54 @@ jobs:
         railway_token: ${{ secrets.RAILWAY_TOKEN }}
         service: "assignment CICD"
 
-     - name: Send custom JSON data to Slack workflow
-       id: slack
-       uses: slackapi/slack-github-action@v1.23.0
-       with:
-    # This data can be any valid JSON from a previous step in the GitHub Action
-        payload: |
-          {
-              "blocks": [
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Name*: Lee Wei Xiang Vincent"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Email*: vincelee7778@gmail.com"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Matriculation*: A112"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Repository*: ${{ secrets.GH56_URL }}"
-                    }
-                  ]
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "${{ secrets.RAILWAY_DOMAIN }}"
-                  },
-                  "accessory": {
-                    "type": "button",
-                    "text": {
-                      "type": "plain_text",
-                      "text": "Go",
-                      "emoji": true
-                    },
-                    "value": "click_me_123",
-                    "url": "${{ secrets.RAILWAY_DOMAIN }}"
-                  }
-                }
-              ]
-            }
+    #  - name: Send custom JSON data to Slack workflow
+    #    id: slack
+    #    uses: slackapi/slack-github-action@v1.23.0
+    #    with:
+    # # This data can be any valid JSON from a previous step in the GitHub Action
+    #     payload: |
+    #       {
+    #           "blocks": [
+    #             {
+    #               "type": "section",
+    #               "fields": [
+    #                 {
+    #                   "type": "mrkdwn",
+    #                   "text": "*Name*: Lee Wei Xiang Vincent"
+    #                 },
+    #                 {
+    #                   "type": "mrkdwn",
+    #                   "text": "*Email*: vincelee7778@gmail.com"
+    #                 },
+    #                 {
+    #                   "type": "mrkdwn",
+    #                   "text": "*Matriculation*: A112"
+    #                 },
+    #                 {
+    #                   "type": "mrkdwn",
+    #                   "text": "*Repository*: ${{ secrets.GH56_URL }}"
+    #                 }
+    #               ]
+    #             },
+    #             {
+    #               "type": "section",
+    #               "text": {
+    #                 "type": "mrkdwn",
+    #                 "text": "${{ secrets.RAILWAY_DOMAIN }}"
+    #               },
+    #               "accessory": {
+    #                 "type": "button",
+    #                 "text": {
+    #                   "type": "plain_text",
+    #                   "text": "Go",
+    #                   "emoji": true
+    #                 },
+    #                 "value": "click_me_123",
+    #                 "url": "${{ secrets.RAILWAY_DOMAIN }}"
+    #               }
+    #             }
+    #           ]
+    #         }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
