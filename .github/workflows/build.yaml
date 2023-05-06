@@ -30,9 +30,9 @@ jobs:
         service: "assignment CICD"
 
     - name: Send custom JSON data to Slack workflow
-       id: slack
-       uses: slackapi/slack-github-action@v1.23.0
-       with:
+      id: slack
+      uses: slackapi/slack-github-action@v1.23.0
+      with:
     # This data can be any valid JSON from a previous step in the GitHub Action
         payload: |
           {
