@@ -18,7 +18,7 @@ jobs:
        uses: actions/go-dependency-submission@v1
        with:
         token: ${{secrets.WFTOKEN}}
-        go-mod-path: go.mod  
+        go-mod-path: ./go.mod  
         go-build-target: all
 
      - name: checkout source
