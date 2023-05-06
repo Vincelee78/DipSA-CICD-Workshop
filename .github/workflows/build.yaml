@@ -17,7 +17,7 @@ jobs:
     - name: checkout source name
       uses: actions/checkout@v3
 
-    - name: Run snapshot
+    - name: Run snapshot test
       uses: actions/go-dependency-submission@v1
       with:
         go-mod-path: go.mod
