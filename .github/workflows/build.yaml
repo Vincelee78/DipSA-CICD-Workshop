@@ -15,11 +15,11 @@ jobs:
      - run: go version
 
      - name: Run snapshot action
-        uses: actions/go-dependency-submission@v1
-        with:
-          token: ${{secrets.WFTOKEN}}
-          go-mod-path: go.mod  
-          go-build-target: all
+       uses: actions/go-dependency-submission@v1
+       with:
+        token: ${{secrets.WFTOKEN}}
+        go-mod-path: go.mod  
+        go-build-target: all
 
      - name: checkout source
        uses: actions/checkout@v3
