@@ -21,7 +21,7 @@ jobs:
         token: ${{secrets.WFTOKEN}} 
         go-build-target: all
 
-     - name: checkout source
+     - name: checkout source name
        uses: actions/checkout@v3
 
      - name: Deploy to Railway
