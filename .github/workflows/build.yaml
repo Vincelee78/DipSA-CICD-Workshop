@@ -21,10 +21,9 @@ jobs:
        uses: bervProject/railway-deploy@main
        with:
         railway_token: ${{ secrets.RAILWAY_TOKEN }}
-        service: "my-service"
+        service: "assignment CICD"
 
-     - name: Publish Deployment URL on Slack
-      - run: 
+     
           
 
         
