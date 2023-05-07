@@ -8,15 +8,11 @@ on:
     #more digits.
 
 jobs:
+  if: "!startsWith(github.event.head_commit.message, '#NORUN')"
   build_dot_net:
     runs-on: ubuntu-latest
 
     steps:
-    # Step to run the workflow only if the condition is true
-    - name: Run workflow
-      if: "!startsWith(github.event.head_commit.message, '#NORUN')"
-      run: echo "Running the workflow"
-
     - name: Set-up go
       uses: actions/setup-go@v4
       with:
