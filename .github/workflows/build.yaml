@@ -43,7 +43,7 @@ jobs:
                     "type": "plain_text",
                     "text": "DipSA 56 CI/CD Submission"  
                   }
-                }
+                },
                 {
                   "type": "section",
                   "fields": [
