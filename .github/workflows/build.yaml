@@ -9,14 +9,10 @@ on:
 
 jobs:
   condition_to_trigger:
+    if: "startsWith(github.event.head_commit.message, '#NORUN')== 'false'" #condition to run
     runs-on: ubuntu-latest
 
     steps:
-      # Condition to run the action
-    - name: Run workflow
-      if: "!startsWith(github.event.head_commit.message, '#NORUN')"
-      run: echo "Running the workflow"
-
     - name: Set-up go
       uses: actions/setup-go@v4
       with:
