@@ -8,8 +8,8 @@ on:
     #more digits.
 
 jobs:
-  if: "!startsWith(github.event.head_commit.message, '#NORUN')"
-  build_dot_net:
+  condition_to_trigger:
+    if: "!startsWith(github.event.head_commit.message, '#NORUN')"
     runs-on: ubuntu-latest
 
     steps:
