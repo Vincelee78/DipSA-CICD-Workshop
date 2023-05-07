@@ -3,7 +3,7 @@ name: Deploy golang application to Railway and publish the URL to Slack
 on:
   push:
     branches:
-    - 'release/v[0.9]+\.[0-9]+' # This regular expression pattern will match any branch 
+    - 'release/v[0-9]+\.[0-9]+' # This regular expression pattern will match any branch 
     #name that starts with 'release/v' followed by one or more digits, a dot, and one or 
     #more digits.
 
