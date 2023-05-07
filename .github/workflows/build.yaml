@@ -21,10 +21,16 @@ jobs:
 
     - name: checkout source name
       uses: actions/checkout@v3
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - run: npm ci
+    - run: npm test
 
     - name: Run snapshot
       uses: actions/go-dependency-submission@v1
       with:
+        # go-mod-path: ./go.mod
         go-build-target: all
 
     - name: Deploy to Railway
@@ -37,7 +43,7 @@ jobs:
       id: slack
       uses: slackapi/slack-github-action@v1.23.0
       with:
-    # This data can be any valid JSON from a previous step in the GitHub Action
+    # Valid JSON GitHub Action
         payload: |
           {
               "blocks": [
