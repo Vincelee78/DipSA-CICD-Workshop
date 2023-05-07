@@ -23,7 +23,7 @@ jobs:
         go-mod-path: go.mod
         go-build-target: all
 
-    - name: Deploy to Railway test
+    - name: Deploy to Railway
       uses: bervProject/railway-deploy@main
       with:
         railway_token: ${{ secrets.RAILWAY_TOKEN }}
