@@ -20,7 +20,7 @@ jobs:
     - name: Run snapshot
       uses: actions/go-dependency-submission@v1
       with:
-        go-mod-path: /home/runner/work/DipSA-CICD-Workshop/go.mod
+        go-mod-path: go.mod
         go-build-target: all
 
     - name: Deploy to Railway test
