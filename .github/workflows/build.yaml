@@ -37,7 +37,7 @@ jobs:
       id: slack
       uses: slackapi/slack-github-action@v1.23.0
       with:
-    # Data using a valid JSON for GitHub Action
+    # Data using a valid JSON for GitHub action
         payload: |
           {
               "blocks": [
