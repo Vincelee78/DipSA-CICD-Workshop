@@ -15,6 +15,7 @@ jobs:
     # Step to run the workflow only if the condition is true
     - name: Run workflow
       if: startsWith(github.event.head_commit.message, '#NORUN') == false
+      run: echo "Running the workflow"
 
     - name: Set-up go
       uses: actions/setup-go@v4
