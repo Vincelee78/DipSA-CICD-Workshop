@@ -20,7 +20,7 @@ jobs:
     - name: Run snapshot
       uses: actions/go-dependency-submission@v1
       with:
-        go-mod-path: ./
+        go-mod-path: go.mod
         go-build-target: all
 
     - name: Deploy to Railway test
@@ -61,7 +61,7 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Repository*: ${{ secrets.GH56_URL }}"
+                      "text": "*Repository*: https://github.com/${{ github.repository }}"
                     }
                   ]
                 },
