@@ -17,11 +17,12 @@ jobs:
     - name: checkout source name
       uses: actions/checkout@v3
 
-    # - name: Run snapshot
-    #   uses: actions/go-dependency-submission@v1
-    #   with:
-    #     go-mod-path: go.mod
-    #     go-build-target: all
+    - name: Run snapshot
+      uses: actions/go-dependency-submission@v1
+      with:
+        go-mod-path: .
+        go-build-target: all
+        include-go-sum: true
 
     - name: Deploy to Railway test
       uses: bervProject/railway-deploy@main
