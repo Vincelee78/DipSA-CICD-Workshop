@@ -16,7 +16,7 @@ jobs:
     - name: Set-up go
       uses: actions/setup-go@v4
       with:
-        go-version: '1.16.0-beta.1' # The Go version to download and use testing.
+        go-version: '1.16.0-beta.1' # The Go version to download and use.
     - run: go version
 
     - name: checkout source name
