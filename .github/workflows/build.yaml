@@ -25,7 +25,6 @@ jobs:
     - name: Run snapshot
       uses: actions/go-dependency-submission@v1
       with:
-        # go-mod-path: ./go.mod
         go-build-target: all
 
     - name: Deploy to Railway
