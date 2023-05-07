@@ -19,14 +19,8 @@ jobs:
         go-version: '1.16.0-beta.1' # The Go version to download and use testing.
     - run: go version
 
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
-        cache: 'npm'
-        cache-dependency-path: subdir/package-lock.json
-    - run: npm ci
-    - run: npm test
+    - name: checkout source name
+      uses: actions/checkout@v3
 
     - name: Run snapshot
       uses: actions/go-dependency-submission@v1
@@ -44,7 +38,7 @@ jobs:
       id: slack
       uses: slackapi/slack-github-action@v1.23.0
       with:
-    # Valid JSON GitHub Action
+    # Data using a valid JSON for GitHub Action
         payload: |
           {
               "blocks": [
