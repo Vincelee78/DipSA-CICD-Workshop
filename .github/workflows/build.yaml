@@ -1,7 +1,11 @@
-name: building.net application
+name: Deploy golang application to Railway and publish the URL to Slack
 
 on:
   push:
+    branches:
+    - 'release/v[0.9]+\.[0-9]+' # This regular expression pattern will match any branch 
+    #name that starts with 'release/v' followed by one or more digits, a dot, and one or 
+    #more digits.
 
 jobs:
   build_dot_net:
@@ -17,11 +21,11 @@ jobs:
     - name: checkout source name
       uses: actions/checkout@v3
 
-    - name: Run snapshot
-      uses: actions/go-dependency-submission@v1
-      with:
-        go-mod-path: go.mod
-        go-build-target: all
+    # - name: Run snapshot
+    #   uses: actions/go-dependency-submission@v1
+    #   with:
+    #     go-mod-path: go.mod
+    #     go-build-target: all
 
     - name: Deploy to Railway
       uses: bervProject/railway-deploy@main
